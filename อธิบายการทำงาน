@@ -1,0 +1,40 @@
+#Source Code Disciption
+
+//นำเข้าฟังก์ชั่นสร้างอาร์เรย์ และรับค่าจากคีย์บอร์ด//
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner ll = new Scanner(System.in);
+        
+//ประกาศอาร์เรย์ว่างเปล่าชนิดข้อมูล Character ชื่อ akson 
+        ArrayList<Character> akson = new ArrayList<>();
+
+//กำหนดตัวแปร vowel = 0 เพื่อเก็บจำนวนของสระ
+        int vowel = 0;
+//ลูปรับค่าตัวอักษร
+        while (true){
+            char ch = ll.next()charAt(0);
+//ตรวจสอบว่ารับค่า q เข้ามาหรือยัง ถ้าใช่ให้หยุดการทำงาน
+            if (ch == 'q'){
+                break;
+            }
+//เพิ่มค่าที่รับมาเข้าไปให้อาร์เรย์ของ akson
+            akson.add(ch);
+//สร้าง indexOf() เพื่อตรวจสอบตามลำดับในอินเด็กซ์ว่าตรงรับค่าที่รับเข้ามาไหม
+//หากตรง vowel เพิ่ม 1 
+            if ("aeiou".indexOf(ch)>=0){
+                vowel++;
+            }
+        }
+//สร้างอาร์เรย์ c สำหรับเก็บค่าทุกตัวใน akson
+//แสดงผลในรูปตัวพิมพ์ใหญ่
+        for (char c : akson) {
+            System.out.println(Character.toUpperCase(c));
+        }
+
+//แสดงผลจำนวนสระที่พบ
+        System.out.println(vowel);
+    }
+}
